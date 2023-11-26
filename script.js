@@ -9,7 +9,7 @@ console.log(input);
 const addBtn = document.getElementById("add-button");
 console.log(addBtn);
 
-// Function for adding tasks
+// Function for adding tasks and key attached to it
 
 function addTask() {
 
@@ -29,6 +29,15 @@ function addTask() {
     input.value = "";
     setData();
 }
+
+input.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addTask();
+    }
+})
+
+
 
 // Clearing all tasks function
 
